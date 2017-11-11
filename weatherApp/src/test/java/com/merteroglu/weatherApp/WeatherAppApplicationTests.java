@@ -1,4 +1,4 @@
-package com.merteroglu.javaweatherapp;
+package com.merteroglu.weatherApp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class JavaweatherappApplicationTests {
+public class WeatherAppApplicationTests {
 
 	@Test
 	public void contextLoads() {
