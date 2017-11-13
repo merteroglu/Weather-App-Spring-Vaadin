@@ -30,12 +30,14 @@ public class WeatherUI extends UI {
 
     private void setupLayout() {
         root = new VerticalLayout();
-        root.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
+        root.setDefaultComponentAlignment(Alignment.TOP_LEFT);
+        root.setResponsive(true);
         setContent(root);
     }
 
     private void addHeader() {
        Label header = new Label("Weather App - Vaadin");
+       header.setWidth("80%");
        header.addStyleName(ValoTheme.LABEL_H1);
        root.addComponent(header);
     }
@@ -45,7 +47,7 @@ public class WeatherUI extends UI {
         formLayout.setWidth("80%");
         TextField cityName = new TextField();
         Button add = new Button("Add");
-        add.addStyleName(ValoTheme.BUTTON_PRIMARY);
+        add.addStyleName(ValoTheme.BUTTON_FRIENDLY);
         add.setIcon(VaadinIcons.PLUS_CIRCLE);
 
         add.addClickListener(click -> {

@@ -6,7 +6,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-@EnableConfigurationProperties(WeatherAppProperties.class)
 @EnableCaching(proxyTargetClass = true)
 public class WeatherAppApplication {
 

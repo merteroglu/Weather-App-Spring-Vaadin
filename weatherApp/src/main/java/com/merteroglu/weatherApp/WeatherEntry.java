@@ -8,7 +8,6 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
-
 public class WeatherEntry implements Serializable {
     private Instant timestamp;
 
@@ -28,9 +27,6 @@ public class WeatherEntry implements Serializable {
         this.timestamp = Instant.ofEpochMilli(unixTime * 1000);
     }
 
-    /**
-     * Return the temperature in Kelvin (K).
-     */
     public double getTemperature() {
         return this.temperature;
     }

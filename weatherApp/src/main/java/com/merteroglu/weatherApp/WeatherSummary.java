@@ -19,6 +19,14 @@ public class WeatherSummary {
         this.temperature = weather.getTemperature();
     }
 
+    WeatherSummary(String country,String city,WeatherEntry weather){
+        this.country = country;
+        this.city = city;
+        this.code = weather.getWeatherId();
+        this.icon = weather.getWeatherIcon();
+        this.temperature = weather.getTemperature();
+    }
+
     public String getCountry() {
         return this.country;
     }
