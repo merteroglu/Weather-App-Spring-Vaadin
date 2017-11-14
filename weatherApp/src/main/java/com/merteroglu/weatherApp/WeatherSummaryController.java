@@ -30,20 +30,30 @@ public class WeatherSummaryController {
     }
 
     public WeatherSummary getSummary(String text){
-        WeatherSummary summary;
+        WeatherSummary summary = null;
+        try {
             String country = text.split("/")[0];
             String city = text.split("/")[1];
             WeatherE weather = this.weatherService.getWeather(country, city);
             summary = createWeatherSummary(country, city, weather);
-        return summary;
+        }catch (Exception e){
+            logger.info("Exception : " + e.toString());
+            return null;
+        }
+            return summary;
     }
 
     public WeatherForecast getForecast(String text){
-            WeatherForecast forecast;
-            String country = text.split("/")[0];
-            String city = text.split("/")[1];
-            forecast = this.weatherService.getWeatherForecast(country,city);
-        return forecast;
+            WeatherForecast forecast = null;
+            try {
+                String country = text.split("/")[0];
+                String city = text.split("/")[1];
+                forecast = this.weatherService.getWeatherForecast(country, city);
+            }catch (Exception e){
+                logger.info("Exception : " + e.toString());
+                return null;
+            }
+            return forecast;
     }
 
     private WeatherSummary createWeatherSummary(String country, String city, WeatherE weather) {

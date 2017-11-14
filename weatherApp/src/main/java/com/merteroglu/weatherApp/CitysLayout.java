@@ -54,6 +54,7 @@ public class CitysLayout extends VerticalLayout{
             repo.save(city);
             update();
         }catch (Exception e){
+            log.info(e.getMessage().toString());
             Notification.show("Hata",
                     "Sehir bilgisi eklenemedi. Girdi Country/City seklinde olmalidir ",
                     Notification.Type.HUMANIZED_MESSAGE);
