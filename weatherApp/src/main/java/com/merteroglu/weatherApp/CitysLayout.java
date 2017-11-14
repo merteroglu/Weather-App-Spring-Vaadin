@@ -51,12 +51,20 @@ public class CitysLayout extends VerticalLayout{
         try{
             String country = city.getName().split("/")[0];
             String cityy = city.getName().split("/")[1];
-            repo.save(city);
-            update();
+
         }catch (Exception e){
             log.info(e.getMessage().toString());
             Notification.show("Hata",
                     "Sehir bilgisi eklenemedi. Girdi Country/City seklinde olmalidir ",
+                    Notification.Type.HUMANIZED_MESSAGE);
+        }
+
+        try{
+            repo.save(city);
+            update();
+        }catch (Exception e){
+            Notification.show("Hata",
+                    "Sehir bilgisi daha önce kayıt edilmis veya hatalı ",
                     Notification.Type.HUMANIZED_MESSAGE);
         }
 

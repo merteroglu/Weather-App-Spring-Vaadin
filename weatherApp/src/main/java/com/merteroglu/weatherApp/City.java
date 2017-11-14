@@ -1,9 +1,6 @@
 package com.merteroglu.weatherApp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class City {
@@ -12,6 +9,7 @@ public class City {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(unique = true)
     private String text;
 
     public City(){
