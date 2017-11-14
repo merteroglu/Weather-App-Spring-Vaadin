@@ -6,6 +6,7 @@ import com.vaadin.addon.pagination.PaginationResource;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.VerticalLayout;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -29,6 +30,7 @@ public class CitysLayout extends VerticalLayout{
     @PostConstruct
     void init() {
         setDefaultComponentAlignment(Alignment.TOP_LEFT);
+        setWidth("100%");
         update();
     }
 
@@ -46,7 +48,16 @@ public class CitysLayout extends VerticalLayout{
 
 
     public void add(City city) {
-        repo.save(city);
-        update();
+        try{
+            String country = city.getName().split("/")[0];
+            String cityy = city.getName().split("/")[1];
+            repo.save(city);
+            update();
+        }catch (Exception e){
+            Notification.show("Hata",
+                    "Sehir bilgisi eklenemedi. Girdi Country/City seklinde olmalidir ",
+                    Notification.Type.HUMANIZED_MESSAGE);
+        }
+
     }
 }
