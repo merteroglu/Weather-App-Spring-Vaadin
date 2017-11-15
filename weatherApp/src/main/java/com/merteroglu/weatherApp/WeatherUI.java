@@ -80,5 +80,4 @@ public class WeatherUI extends UI {
     }
 
 
-
 }

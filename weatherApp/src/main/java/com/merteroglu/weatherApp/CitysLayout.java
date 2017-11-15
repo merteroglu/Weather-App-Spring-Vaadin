@@ -1,16 +1,15 @@
 package com.merteroglu.weatherApp;
 
+import com.github.appreciated.material.MaterialTheme;
 import com.vaadin.addon.pagination.Pagination;
 import com.vaadin.addon.pagination.PaginationChangeListener;
 import com.vaadin.addon.pagination.PaginationResource;
 import com.vaadin.spring.annotation.SpringComponent;
-import com.vaadin.ui.Alignment;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Notification;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -22,10 +21,14 @@ public class CitysLayout extends VerticalLayout{
     @Autowired
     CityRepository repo;
 
-    final int page = 1;
     final int limit = 5;
     long total;
+    int page = 1;
+    int k ;
 
+    List<City> fiveCity = new ArrayList<>();
+
+    HorizontalLayout pageLayout;
 
     @PostConstruct
     void init() {
@@ -36,13 +39,46 @@ public class CitysLayout extends VerticalLayout{
 
 
     void update(){
+        removeAllComponents();
+        pageLayout = new HorizontalLayout();
+        pageLayout.setDefaultComponentAlignment(Alignment.TOP_CENTER);
         total = repo.count();
         log.info("total :" + total);
-        setCitys(repo.findAll());
+        List<City> fiveCity = new ArrayList<>();
+        List<City> allCity = repo.findAll();
+
+        if(total > 5){
+
+            for(int i = (page*5)-5;i<((page-1)*5)+5;i++){
+                if(i < allCity.size()){
+                    fiveCity.add(allCity.get(i));
+                }
+            }
+
+            for(k = 0; k < (total/5)+1;k++){
+                Button btn = new Button((k+1)+"");
+                btn.setStyleName(MaterialTheme.BUTTON_FLAT);
+
+                Button.ClickListener clickListener = new Button.ClickListener() {
+                    @Override
+                    public void buttonClick(Button.ClickEvent clickEvent) {
+                        page = Integer.parseInt( btn.getCaption());
+                        update();
+                    }
+                };
+                btn.addClickListener(clickListener);
+                pageLayout.addComponent(btn);
+            }
+            setCitys(fiveCity);
+            addComponent(pageLayout);
+        }else{
+            setCitys(repo.findAll());
+        }
+
     }
 
     private void setCitys(List<City> citys) {
-        removeAllComponents();
+       // removeAllComponents();
         citys.forEach(city -> addComponent(new CityItemLayout(city)));
     }
 

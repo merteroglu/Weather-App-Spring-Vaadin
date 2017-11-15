@@ -4,3 +4,5 @@ INSERT INTO City VALUES(1, 'Turkey/Bursa');
 INSERT INTO City VALUES(2, 'Turkey/Yalova');
 INSERT INTO City VALUES(3, 'Turkey/Kocaeli');
 INSERT INTO City VALUES(4, 'Turkey/İstanbul');
+INSERT INTO City VALUES(5, 'Turkey/Ankara');
+INSERT INTO City VALUES(6, 'Turkey/Edirne');
