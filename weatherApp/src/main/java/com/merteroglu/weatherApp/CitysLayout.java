@@ -49,13 +49,13 @@ public class CitysLayout extends VerticalLayout{
 
         if(total > 5){
 
-            for(int i = (page*5)-5;i<((page-1)*5)+5;i++){
+            for(int i = (page*limit)-limit;i<((page-1)*limit)+limit;i++){
                 if(i < allCity.size()){
                     fiveCity.add(allCity.get(i));
                 }
             }
 
-            for(k = 0; k < (total/5)+1;k++){
+            for(k = 0; k < (total/limit)+1;k++){
                 Button btn = new Button((k+1)+"");
                 btn.setStyleName(MaterialTheme.BUTTON_FLAT);
 

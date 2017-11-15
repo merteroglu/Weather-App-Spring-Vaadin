@@ -67,7 +67,7 @@ public class WeatherUI extends UI {
         formLayout.addComponentsAndExpand(cityName);
         formLayout.addComponent(add);
         Label sehirEkle = new Label("Sehir Ekle");
-        sehirEkle.setWidth("20%");
+        sehirEkle.setWidth("15%");
         sehirEkle.setStyleName(MaterialTheme.LABEL_H3);
         vformLayout.addComponent(sehirEkle);
         vformLayout.addComponent(formLayout);
