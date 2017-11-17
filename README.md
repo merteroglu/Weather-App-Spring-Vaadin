@@ -8,6 +8,13 @@ http://localhost:8080
 mvn clean install spring-boot:run
 ```
 
+## Screenshots
+ ![Screenshot](https://github.com/merteroglu/Weather-App-Spring-Vaadin/blob/master/screenshots/Screenshot-1.png)
+ ![Screenshot](https://github.com/merteroglu/Weather-App-Spring-Vaadin/blob/master/screenshots/Screenshot-2.png)
+ ![Screenshot](https://github.com/merteroglu/Weather-App-Spring-Vaadin/blob/master/screenshots/Screenshot-3.png)
+ ![Screenshot](https://github.com/merteroglu/Weather-App-Spring-Vaadin/blob/master/screenshots/Screenshot-4.png)
+ ![Screenshot](https://github.com/merteroglu/Weather-App-Spring-Vaadin/blob/master/screenshots/Screenshot-5.png)
+
 ### [Maven](https://maven.apache.org/)
 
 Apache Maven bir yazılım proje yönetimi ve anlama aracıdır. Bir proje nesne modeli (POM) kavramına dayanan Maven, bir projenin yapısını, raporlamasını ve belgelerini merkezi bir bilgi parçasından yönetebilir.
