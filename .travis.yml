@@ -1,4 +1,4 @@
 language: java
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+mvn clean install spring-boot:run
 install: true
 script: ./mvnw clean install
