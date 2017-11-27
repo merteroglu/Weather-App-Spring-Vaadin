@@ -2,6 +2,7 @@ package com.merteroglu.weatherApp;
 
 import com.github.appreciated.material.MaterialTheme;
 import com.vaadin.annotations.Theme;
+import com.vaadin.annotations.Title;
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.VaadinRequest;
@@ -10,6 +11,7 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.beans.factory.annotation.Autowired;
 
+@Title("Weather App")
 @SpringUI
 @Theme("valo")
 public class WeatherUI extends UI {

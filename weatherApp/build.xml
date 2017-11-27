@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<project name="test" default="all" basedir=".">
+
+    <target name="all"></target>
+    <property name="pkg.name" value="test"/>
+
+    <property name="dir.src.java" value="${basedir}/src/"/>
+    <property name="dir.src.javacc" value="${basedir}/javacc"/>
+    <property name="dir.test.java" value="${basedir}/out/src"/>
+    <property name="dir.class" value="${basedir}/out/Test"/>
+
+    <target name="grammar">
+
+        <mkdir dir="${basedir}"/>
+        <mkdir dir="${basedir}/out/"/>
+        <mkdir dir="${dir.test.java}"/>
+        <mkdir dir="${dir.test.java}/com"/>
+        <mkdir dir="${dir.test.java}/com/example"/>
+
+        <javacc
+                target="${dir.src.javacc}/Test.jj"
+                outputdirectory="${dir.test.java}/com/example"
+                javacchome="/usr/share/java/"
+                debugparser="true" />
+
+    </target>
+
+    <target name="compile" depends="grammar">
+
+        <mkdir dir="${dir.class}"/>
+
+        <javac destdir="${dir.class}"
+               includeantruntime="false"
+               debug="on">
+            <compilerarg value="-Xlint:-path"/>
+            <src path="${dir.src.java}"/>
+            <src path="${dir.test.java}"/>
+        </javac>
+    </target>
+
+</project>
