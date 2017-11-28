@@ -1,3 +1,4 @@
 language: java
 install: true
+install: ./install-dependencies.sh
 script: ./mvnw clean install spring-boot:run -DskipTests=true -Dmaven.javadoc.skip=true -B -V
