@@ -19,6 +19,8 @@ public class WeatherService {
 
     private static final Logger logger = LoggerFactory.getLogger(WeatherService.class);
 
+    private static final String APP_ID = "838fcd5e9d92bf19835c2e7d129b66fe";
+
     private static final String WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?q={city},{country}&APPID=838fcd5e9d92bf19835c2e7d129b66fe";
 
     private static final String FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast?q={city},{country}&APPID=838fcd5e9d92bf19835c2e7d129b66fe";
