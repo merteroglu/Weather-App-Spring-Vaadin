@@ -1,4 +1,27 @@
+sudo: false # faster builds
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
+addons:
+  sonarcloud:
+    organization: 'second-opinion-api'
+
 language: java
-install: true
-install: ./install-dependencies.sh
-script: ./mvnw clean install spring-boot:run -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+jdk:
+  - oraclejdk8
+
+install:
+  - 'mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V'
+
+script:
+  - 'mvn test'
+  - 'mvn verify -Dit'
+  - 'mvn jacoco:report'
+  - 'mvn sonar:sonar'
+
+after_success:
+  - 'bash <(curl -s https://codecov.io/bash)'
