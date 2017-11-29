@@ -14,9 +14,6 @@ install:
 
 script:
   - 'mvn test'
-  - 'mvn verify -Dit'
-  - 'mvn jacoco:report'
-  - 'mvn sonar:sonar'
 
 after_success:
   - 'bash <(curl -s https://codecov.io/bash)'
