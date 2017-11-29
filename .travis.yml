@@ -5,10 +5,6 @@ cache:
     - '$HOME/.m2/repository'
     - '$HOME/.sonar/cache'
 
-addons:
-  sonarcloud:
-    organization: 'second-opinion-api'
-
 language: java
 
 jdk:
@@ -19,9 +15,4 @@ install:
 
 script:
   - 'mvn test'
-  - 'mvn verify -Dit'
-  - 'mvn jacoco:report'
-  - 'mvn sonar:sonar'
 
-after_success:
-  - 'bash <(curl -s https://codecov.io/bash)'
