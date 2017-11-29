@@ -1,3 +1,6 @@
+![Travis](https://travis-ci.org/merteroglu/Weather-App-Spring-Vaadin.svg?branch=master)
+![Coveralls](https://coveralls.io/repos/github/merteroglu/Weather-App-Spring-Vaadin/badge.svg)
+
 # Weather-App-Spring-Vaadin
 
 ## Run
