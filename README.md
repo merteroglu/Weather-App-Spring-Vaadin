@@ -30,7 +30,7 @@ Spring Boot, Spring kaynaklı, üretim düzeyindeki uygulamalar ve hizmetleri mi
 
 Vaadin Framework, web uygulamaları oluşturmak için sunucu tarafında bir Java kullanıcı arabirimi çerçevesidir. Bileşen seti ve otomatik tarayıcı-sunucu iletişimi ile Vaadin Framework, geliştirme yapmanızı sağlar.Vaadin, Java tabanlı web uygulamalarınızı geliştirmenizi sağlayan bir web framework'udur. ... Masaüstü uygulaması geliştirir gibi web uygulamaları geliştirmenizi sağlamaktadır.
 
-### [Jpa] (http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
+### [Jpa](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
 
 JPA, Java'nın derinliklerine indiyseniz adını muhakkak duymuşsunudur. Java Persistance API önceden açıkladığım Object Relational Mapping API'lerinden bir tanesidir. ... ORM Nesne-Sınıf, Sınıf-Nesne, Nesne-İlişkisel veritabanı arasında ki bağlantıyı sağlamakla görevlidir.
 Java Persistence API, ilişkisel verilerin Java sınıfları ile tutulmasına ve uygulamanın sonlanmasından sonra verinin kalıcı olmasını sağlayan teknolojidir. JPA ile geliştiriciler SQL komutları yerine direk olarak nesneler üzerinde çalışabilir. SQL sorgularını JPA kendi içerisinde barındırır. Veritabanında verileri saklayabilir, güncelleyebilir veya veritabanından verileri çekebilir veya map edebilirsiniz. JPA, verilerin veritabanı üzerinde nasıl eşleşeceği, verinin güvenliği ve performansı ile ilgilenir. Uygulama ile veritabanı arasında arabirim noktasını oluşturur.
