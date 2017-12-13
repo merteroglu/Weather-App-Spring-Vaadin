@@ -25,7 +25,7 @@ public class WeatherAppApplicationTests {
 	public void getWeather() {
 		WeatherE weather = this.weatherService.getWeather("es", "barcelona");
 		Assert.assertEquals("Barcelona",weather.getName());
-		Assert.assertEquals(803, weather.getWeatherId().intValue());
+		Assert.assertEquals(800, weather.getWeatherId().intValue());
 	}
 
 	@Test
